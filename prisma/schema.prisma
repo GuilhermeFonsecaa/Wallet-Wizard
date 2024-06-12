@@ -1,0 +1,67 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model UserSettings {
+  userId   String @id
+  currency String
+}
+
+model Category {
+  createAt DateTime @default(now())
+  name     String
+  userId   String
+  icon     String
+  type     String   @default("income")
+
+  @@unique([name, userId, type])
+}
+
+model Transaction {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updateAt  DateTime @default(now())
+
+  amount      Float
+  description String
+  date        DateTime
+  userId      String
+  type        String   @default("income")
+
+  category     String
+  categoryIcon String
+}
+
+model MonthHistory {
+  userId  String
+  day     Int
+  month   Int
+  year    Int
+  income  Float
+  expense Float
+
+  //não existirá mais de um registro com a mesma combinação
+  @@id([day, month, year, userId]) //prevenir duplicação de registros mensais para o mesmo usuário
+}
+
+model YearHistory {
+  userId  String
+  month   Int
+  year    Int
+  income  Float
+  expense Float
+
+  //não existirá mais de um registro com a mesma combinação
+  @@id([month, year, userId]) //prevenir duplicação de registros anuais para o mesmo usuário
+}
