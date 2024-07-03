@@ -14,8 +14,8 @@ const NavbarItem = ({ link, label, clickCallback }: NavbarItemProps) => {
     const isActive = pathName === link;
 
     return (
-        <div className="relative flex items-center">
-            <Link className={cn(buttonVariants({ variant: "ghost" }), "w-full justify-start text-muted-foreground hover:text-foreground", isActive && "text-foreground")} href={link} onClick={() => {
+        <div className="relative flex items-center h-full">
+            <Link className={cn(buttonVariants({ variant: "ghost" }), "w-full justify-start text-muted-foreground hover:text-foreground text-lg p-5", isActive && "text-foreground")} href={link} onClick={() => {
                 if (clickCallback) {
                     clickCallback();
                 }
@@ -23,7 +23,8 @@ const NavbarItem = ({ link, label, clickCallback }: NavbarItemProps) => {
                 {label}
             </Link>
             {isActive && (
-                <div className="absloute bottom-0.5 left-1/2 hidden h-0.5 w-[80%] -translate-x-1/2 rounded-xl bg-foreground md:block"></div>
+                 <div className="absolute top-[58px] left-1/2 transform -translate-x-1/2 h-0.5 w-[80%] rounded-xl bg-foreground md:block">
+                </div>
             )}
         </div>
     )
