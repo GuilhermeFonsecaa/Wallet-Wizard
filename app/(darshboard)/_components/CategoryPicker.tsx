@@ -79,7 +79,7 @@ const CategoryPicker = ({ type, onChange }: Props) => {
           ) : (
             "Selecione a categoria"
           )}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shirink-0 opacity-50" />
+          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
@@ -100,7 +100,7 @@ const CategoryPicker = ({ type, onChange }: Props) => {
               {categoriesQuery.data &&
                 categoriesQuery.data.map((category: Category) => (
                   <CommandItem
-                    className="flex items-center gap-2"
+                    className="flex items-center cursor-pointer p-1 hover:bg-gray-800"
                     key={category.name}
                     onSelect={() => {
                       setValue(category.name);
