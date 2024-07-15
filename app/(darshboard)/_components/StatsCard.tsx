@@ -19,7 +19,7 @@ const StatsCard = ({ formatter, value, title, icon }: StatsCardProps) => {
     return (
         <Card className="flex h-24 w-full items-center gap-3 p-4">
             {icon}
-            <div className="flex flex-col">
+            <div className="flex flex-col items-start gap-0">
             <CardTitle className="text-muted-foreground">{title}</CardTitle>
             <CountUp preserveValue
                 redraw={false}

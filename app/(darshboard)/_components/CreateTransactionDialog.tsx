@@ -112,7 +112,7 @@ const CreateTransactionDialog = ({ trigger, type }: Props) => {
       <DialogContent>
         <DialogHeader>
           <DialogTitle>
-            Criar uma nova{" "}
+            Criar uma nova
             <span
               className={cn(
                 "m-1",
