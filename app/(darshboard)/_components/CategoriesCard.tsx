@@ -11,8 +11,8 @@ interface CategoriesCardProps {
 }
 
 const CategoriesCard = ({ type, formatter, data }: CategoriesCardProps) => {
-    const filteredData = data.filter((t) => t.type === type);
-    const total = filteredData.reduce((acc, t) => acc + (t._sum?.amount || 0), 0);
+    const filteredData = data.filter((t) => t.type === type); //verifica se possui categorias do tipo renda e despesa 
+    const total = filteredData.reduce((acc, t) => acc + (t._sum?.amount || 0), 0); //total de renda e despesa
 
     return (
         <Card className="h-80 w-full">
@@ -34,8 +34,8 @@ const CategoriesCard = ({ type, formatter, data }: CategoriesCardProps) => {
                     <ScrollArea className="h-60 w-full px-4">
                         <div className="flex w-full flex-col gap-4 p-4">
                             {filteredData.map(item => {
-                                const amount = item._sum.amount || 0;
-                                const percentage = (amount * 100) / (total || amount);
+                                const amount = item._sum.amount || 0; //valor total que possui em cada categoria
+                                const percentage = (amount * 100) / (total || amount); //valor total de cada categoria * 100 / total do tipo da categoria
                                 return (
                                     <div className="flex flex-col gap-2">
                                         <div className="flex items-center justify-between">

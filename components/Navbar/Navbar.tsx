@@ -28,7 +28,7 @@ const Navbar = () => {
 const items = [
   { label: "Dashboard", link: "/" },
   { label: "Transações", link: "/transacoes" },
-  { label: "Gerenciar", link: "/gerenciar" },
+  { label: "Gerenciar", link: "/manage" },
 ];
 
 const MobileNavbar = () => {

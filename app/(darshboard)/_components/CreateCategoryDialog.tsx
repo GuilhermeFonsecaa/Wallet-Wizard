@@ -33,7 +33,7 @@ import {
 } from "@/schema/categories";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CircleOff, Loader2, PlusSquare } from "lucide-react";
-import React, { useCallback } from "react";
+import React, { ReactNode, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import Picker from "@emoji-mart/react";
 import data from "@emoji-mart/data";
@@ -46,9 +46,10 @@ import { useTheme } from "next-themes";
 interface Props {
   type: TransactionType;
   successCallback: (category: Category) => void;
+  trigger?: ReactNode
 }
 
-const CreateCategoryDialog = ({ type, successCallback }: Props) => {
+const CreateCategoryDialog = ({ type, successCallback, trigger }: Props) => {
   const [open, setOpen] = React.useState(false);
   const form = useForm<CreateCategorySchemaType>({
     resolver: zodResolver(CreateCategorySchema),
@@ -100,13 +101,13 @@ const CreateCategoryDialog = ({ type, successCallback }: Props) => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button
+        {trigger ? trigger : <Button
           variant={"ghost"}
           className="flex border-separate items-center justify-start rounded-none border-b p-3 text-muted-foreground"
         >
           <PlusSquare className="mr-2 h-4 w-4" />
           Criar nova categoria
-        </Button>
+        </Button>}
       </DialogTrigger>
       <DialogContent className="flex flex-col">
         <DialogHeader>
