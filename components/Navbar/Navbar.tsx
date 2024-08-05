@@ -27,7 +27,7 @@ const Navbar = () => {
 
 const items = [
   { label: "Dashboard", link: "/" },
-  { label: "Transações", link: "/transacoes" },
+  { label: "Transações", link: "/transactions" },
   { label: "Gerenciar", link: "/manage" },
 ];
 

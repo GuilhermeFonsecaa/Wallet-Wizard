@@ -53,7 +53,6 @@ export function CurrencyCombobox() {
         },
 
         onError: (e) => {
-            console.log(e)
             toast.error("Ocorreu um erro ao atualizar sua moeda principal, tente novamente!", {
                 id: "update-currency"
             })
@@ -70,7 +69,6 @@ export function CurrencyCombobox() {
         toast.loading("Atualizando sua moeda principal...", {
             id: "update-currency"
         })
-        console.log(currency.value)
         mutation.mutate(currency.value)
     }, [mutation])
 

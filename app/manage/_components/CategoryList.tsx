@@ -20,7 +20,7 @@ const CategoryList = ({ type }: { type: TransactionType }) => {
     const dataAvailable = categoriesQuery.data && categoriesQuery.data.length > 0
 
     return (
-        <SkeletonWrapper isLoading={categoriesQuery.isFetching}>
+        <SkeletonWrapper isLoading={categoriesQuery.isLoading}>
             <Card>
                 <CardHeader>
                     <CardTitle className="flex items-center justify-between gap-2">
@@ -45,7 +45,7 @@ const CategoryList = ({ type }: { type: TransactionType }) => {
                 <Separator />
                 {!dataAvailable && (
                     <div className="flex h-40 w-full flex-col items-center justify-center">
-                        <p>No <span className={cn("m-1", type === "renda" ? "text-emerald-500" : "text-red-500")}>{type}</span></p>
+                        <p>Não existem <span className={cn("m-1", type === "renda" ? "text-emerald-500" : "text-red-500")}>{type}s</span></p>
                     </div>
                 )}
                 {dataAvailable && (
