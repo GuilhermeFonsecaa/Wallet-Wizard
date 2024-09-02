@@ -12,7 +12,7 @@ interface DateRangeProps {
     to: Date;
 }
 
-const page = () => {
+const Page = () => {
     const [dateRange, setDateRange] = useState<DateRangeProps>({
         from: startOfMonth(new Date()),
         to: new Date(),
@@ -52,4 +52,4 @@ const page = () => {
     );
 }
 
-export default page;
+export default Page;

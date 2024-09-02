@@ -37,7 +37,7 @@ const CategoriesCard = ({ type, formatter, data }: CategoriesCardProps) => {
                                 const amount = item._sum.amount || 0; //valor total que possui em cada categoria
                                 const percentage = (amount * 100) / (total || amount); //valor total de cada categoria * 100 / total do tipo da categoria
                                 return (
-                                    <div className="flex flex-col gap-2">
+                                    <div key={item.category} className="flex flex-col gap-2">
                                         <div className="flex items-center justify-between">
                                             <span className="flex text-base items-center text-gray-400">
                                                 {item.categoryIcon} {item.category}
