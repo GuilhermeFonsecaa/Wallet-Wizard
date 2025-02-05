@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Assistente de Carteira
 
-## Getting Started
+Um sistema de assistente de carteira que permite o gerenciamento de rendas e despesas, além de fornecer um dashboard completo para análise financeira.
 
-First, run the development server:
+## Funcionalidades
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Gerenciamento de Transações**
+  - Criação de rendas e despesas
+  - Categorização de transações
+  - Exclusão de transações
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Dashboard Interativo**
+  - Visualização de despesas e rendas por período selecionado
+  - Gráficos de gastos por categoria
+  - Gráficos de gastos por mês e dias do ano
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Histórico de Transações**
+  - Visualização detalhada de todas as transações
+  - Filtros avançados
+  - Exportação de dados para CSV
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Configurações**
+  - Gerenciamento de moeda utilizada
+  - Criação e edição de categorias de renda e despesa
 
-## Learn More
+## Tecnologias Utilizadas
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Next.js](https://nextjs.org/) - Framework React para renderização híbrida e estática
+- [TypeScript](https://www.typescriptlang.org/) - Superset tipado de JavaScript
+- [PostgreSQL](https://www.postgresql.org/) - Sistema de gerenciamento de banco de dados relacional
+- [TanStack Query](https://tanstack.com/query/latest) - Biblioteca para gerenciamento de estado e cache de dados
+- [TanStack Table](https://tanstack.com/table/v8) - Biblioteca para criação de tabelas flexíveis e poderosas
+- [Prisma](https://www.prisma.io/) - ORM (Object-Relational Mapping) para Node.js e TypeScript
+- [Zod](https://github.com/colinhacks/zod) - Biblioteca de validação de esquema TypeScript-first
+- [React Hook Form](https://react-hook-form.com/) - Biblioteca para gerenciamento de formulários em React
